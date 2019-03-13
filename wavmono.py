@@ -13,7 +13,8 @@ class WaveMonoTool:
     def actionDescription(self):
         return "converted to mono"
     
-    def initializeSummary(self):  
+    def initializeSummary(self):
+        self.startTime = time.time()
         self.numberOfProcessedFiles = 0
         
     def processMonoFile(self, filename):
