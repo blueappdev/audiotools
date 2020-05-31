@@ -31,11 +31,7 @@ class WavConverter:
         baseFilename, extension = os.path.splitext(aFilename)
         assert extension.lower() in self.supportedFileSuffixes(), "unsupported file format " + extension
         wavFilename = baseFilename + ".wav"
-        cmdFilename = os.path.join(os.path.dirname(
-                sys.argv[0]), 
-                "thirdparty", 
-                "ffmpeg.exe")
-        cmd = "%s -y -v 0 -i \"%s\" \"%s\"" % (cmdFilename, aFilename, wavFilename)
+        cmd = "ffmpeg.exe -y -v 0 -i \"%s\" \"%s\"" % (aFilename, wavFilename)
         code = os.system(cmd)
         if code != 0:
              print "ffmpeg failed"
